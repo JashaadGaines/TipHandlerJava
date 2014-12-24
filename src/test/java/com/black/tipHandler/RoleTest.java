@@ -1,7 +1,8 @@
 package com.black.tipHandler;
 
 import org.junit.Test;
-import static org.fest.assertions.api.Assertions.assertThat;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class RoleTest {
 
@@ -25,8 +26,9 @@ public class RoleTest {
     public void tipPercentagesShouldSumToEqualOne() {
 
         double rolePercentageTotal = 0 ;
-        Role.values().stream().map(rolePercentageTotal+=);
-
+        for(Role role: Role.values()){
+            rolePercentageTotal+=role.getTipPercentage();
+        }
         assertThat(rolePercentageTotal).isEqualTo(1.0);
     }
 }
